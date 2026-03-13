@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPBASE.RegistroPage"
+             Title="Registro de Vecino"
+             BackgroundColor="#F5F5DC"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Margin="0,10">
+                <Label Text="📝 DATOS DEL VECINO" 
+                       TextColor="#5D4037" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       CharacterSpacing="1"/>
+                <BoxView HeightRequest="2" Color="#C19A6B" WidthRequest="150" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Border StrokeShape="RoundRectangle 10" Padding="5" Stroke="#C19A6B">
+                    <Entry x:Name="txtNombre" 
+                           Placeholder="Nombre completo" 
+                           PlaceholderColor="Gray"
+                           TextColor="#5D4037"/>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 10" Padding="5" Stroke="#C19A6B">
+                    <Entry x:Name="txtPassword" 
+                           Placeholder="Contraseña de acceso" 
+                           IsPassword="True" 
+                           PlaceholderColor="Gray"
+                           TextColor="#5D4037"/>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Asignar a Casa:" TextColor="#5D4037" FontAttributes="Bold" FontSize="14" />
+                <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                    <Border Grid.Column="0" StrokeShape="RoundRectangle 10" Padding="2" Stroke="#C19A6B">
+                        <Picker x:Name="pickerCasas" 
+                                Title="Seleccione una casa" 
+                                TextColor="#5D4037"
+                                ItemDisplayBinding="{Binding NumeroCasa}" />
+                    </Border>
+
+                    <Button Text="+" 
+                            x:Name="btnAgregarCasa"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            BackgroundColor="#5D4037"
+                            TextColor="White"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            CornerRadius="10"
+                            Clicked="OnAgregarNuevaCasaClicked"
+                            Grid.Column="1" />
+                </Grid>
+            </VerticalStackLayout>
+
+            <Frame BackgroundColor="White" BorderColor="#C19A6B" CornerRadius="15" Padding="15" HasShadow="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="PERMISOS DE ACCESO" TextColor="#5D4037" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,5"/>
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="5">
+                            <CheckBox x:Name="chkPeatonal" Color="#5D4037" />
+                            <Label Text="Peatonal" VerticalOptions="Center" TextColor="#5D4037"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                            <CheckBox x:Name="chkPorton" Color="#5D4037" />
+                            <Label Text="Portón" VerticalOptions="Center" TextColor="#5D4037"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="5">
+                            <CheckBox x:Name="chkAlarma" Color="#5D4037" />
+                            <Label Text="Alarma" VerticalOptions="Center" TextColor="#5D4037"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Spacing="5">
+                            <CheckBox x:Name="chkHistorial" Color="#5D4037" />
+                            <Label Text="Historial" VerticalOptions="Center" TextColor="#5D4037"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Grid.Row="2" Grid.Column="0" Spacing="5">
+                            <CheckBox x:Name="chkCamaras" Color="#5D4037" />
+                            <Label Text="Cámaras" VerticalOptions="Center" TextColor="#5D4037"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <ActivityIndicator x:Name="loader" IsRunning="False" HorizontalOptions="Center" Color="#5D4037" />
+
+            <Button x:Name="btnGuardar"
+                    Text="GUARDAR VECINO"
+                    BackgroundColor="#5D4037"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="60"
+                    CornerRadius="15"
+                    Clicked="BtnGuardar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

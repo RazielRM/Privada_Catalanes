@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPBASE.HistorialPage"
+             Title="Historial de Accesos"
+             BackgroundColor="#F5F5DC"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Frame Grid.Row="0" 
+               BackgroundColor="#5D4037" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="15,20,15,20"
+               BorderColor="Transparent">
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="REGISTRO DE ACTIVIDAD" 
+                       TextColor="White" 
+                       FontSize="14" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       CharacterSpacing="2"/>
+
+                <Grid ColumnDefinitions="*, *, Auto" ColumnSpacing="10">
+                    <VerticalStackLayout Grid.Column="0" Spacing="5">
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="📅" FontSize="12"/>
+                            <Label Text="FECHA" TextColor="#D7CCC8" FontSize="10" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <DatePicker x:Name="filtroFecha" 
+                                    Format="dd/MM/yyyy" 
+                                    TextColor="White"
+                                    BackgroundColor="#795548"
+                                    DateSelected="OnFiltroCambiado"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="5">
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="⏰" FontSize="12"/>
+                            <Label Text="DESDE HORA" TextColor="#D7CCC8" FontSize="10" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <TimePicker x:Name="filtroHora" 
+                                    TextColor="White"
+                                    BackgroundColor="#795548"
+                                    PropertyChanged="OnFiltroCambiado"/>
+                    </VerticalStackLayout>
+
+                    <Button Grid.Column="2" 
+                            Text="RESETEAR" 
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            BackgroundColor="#C19A6B" 
+                            TextColor="#5D4037"
+                            Clicked="OnLimpiarFiltro"
+                            VerticalOptions="End"
+                            HeightRequest="40"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <RefreshView Grid.Row="1" 
+                     Command="{Binding CargarHistorialCommand}"
+                     RefreshColor="#5D4037">
+
+            <CollectionView x:Name="listaHistorial" Margin="15">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#C19A6B" 
+                               CornerRadius="15" 
+                               Margin="0,6" 
+                               Padding="15" 
+                               BackgroundColor="White"
+                               HasShadow="True">
+
+                            <Grid ColumnDefinitions="Auto, *">
+                                <Label Grid.Column="0" 
+                                       Text="🕒" 
+                                       FontSize="24" 
+                                       VerticalOptions="Center" 
+                                       Margin="0,0,15,0"/>
+
+                                <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                    <Label Text="{Binding Accion}" 
+                                           FontAttributes="Bold" 
+                                           FontSize="17" 
+                                           TextColor="#5D4037"/>
+
+                                    <Label Text="{Binding Usuario}" 
+                                           FontSize="14" 
+                                           TextColor="#8D6E63"/>
+
+                                    <HorizontalStackLayout Spacing="15" Margin="0,5,0,0">
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="📅" FontSize="11" VerticalOptions="Center"/>
+                                            <Label Text="{Binding Fecha}" 
+                                                   FontSize="12" 
+                                                   TextColor="#A0A0A0"/>
+                                        </HorizontalStackLayout>
+
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="⏰" FontSize="11" VerticalOptions="Center"/>
+                                            <Label Text="{Binding Hora}" 
+                                                   FontSize="12" 
+                                                   TextColor="#A0A0A0"/>
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <ActivityIndicator x:Name="loader" 
+                           Grid.Row="1"
+                           IsRunning="False" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" 
+                           Color="#5D4037"
+                           WidthRequest="50"
+                           HeightRequest="50" />
+    </Grid>
+</ContentPage>

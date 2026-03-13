@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPBASE.LoginPage"
+             Title=""
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F5EFE6">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Spacing="0">
+
+                <!-- ═══════════════════════════════════════════ -->
+                <!--  VISTA A — CREDENCIALES                     -->
+                <!-- ═══════════════════════════════════════════ -->
+                <VerticalStackLayout x:Name="layoutCredenciales"
+                                     IsVisible="True"
+                                     Spacing="0">
+
+                    <!-- Bloque superior café cálido -->
+                    <Grid HeightRequest="280"
+                          BackgroundColor="#6F4E37">
+
+                        <!-- Círculos decorativos -->
+                        <Ellipse Fill="#7D5A44"
+                                 WidthRequest="300"
+                                 HeightRequest="300"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="End"
+                                 Margin="0,0,-80,0"
+                                 Opacity="0.5"/>
+                        <Ellipse Fill="#5C3D28"
+                                 WidthRequest="160"
+                                 HeightRequest="160"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 Margin="-50,-50,0,0"
+                                 Opacity="0.4"/>
+
+                        <!-- Contenido centrado -->
+                        <VerticalStackLayout VerticalOptions="Center"
+                                             HorizontalOptions="Center"
+                                             Spacing="8">
+
+                            <!-- Logo -->
+                            <Border StrokeThickness="0"
+                                    BackgroundColor="Transparent"
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                    HorizontalOptions="Center"
+                                    Margin="0,0,0,12">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="cat.png"
+                                       HeightRequest="120"
+                                       WidthRequest="120"
+                                       Aspect="AspectFit"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+
+                            <Label Text="Catalanes"
+                                   FontSize="32"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Acceso residencial exclusivo"
+                                   FontSize="13"
+                                   TextColor="#D4B59E"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Tarjeta blanca flotante centrada -->
+                    <Frame BackgroundColor="#FFFFFF"
+                           CornerRadius="32"
+                           HasShadow="True"
+                           BorderColor="Transparent"
+                           Padding="30,34"
+                           Margin="24,-36,24,24">
+
+                        <VerticalStackLayout Spacing="0">
+
+                            <Label Text="Iniciar sesión"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="#3E2008"
+                                   HorizontalOptions="Center"
+                                   Margin="0,0,0,6"/>
+                            <Label Text="Ingresa tus datos para continuar"
+                                   FontSize="13"
+                                   TextColor="#A07850"
+                                   HorizontalOptions="Center"
+                                   Margin="0,0,0,30"/>
+
+                            <!-- Campo Usuario -->
+                            <Label Text="Usuario"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#6F4E37"
+                                   Margin="4,0,0,6"/>
+                            <Border StrokeThickness="1.5"
+                                    Stroke="#EDD9C8"
+                                    BackgroundColor="#FDF8F4"
+                                    Margin="0,0,0,18">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="12"/>
+                                </Border.StrokeShape>
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10"
+                                      Padding="14,0">
+                                    <Label Grid.Column="0"
+                                           Text="👤"
+                                           FontSize="16"
+                                           TextColor="#B07850"
+                                           VerticalOptions="Center"/>
+                                    <Entry x:Name="txtUser"
+                                           Grid.Column="1"
+                                           Placeholder="Tu usuario"
+                                           PlaceholderColor="#D4B59E"
+                                           TextColor="#3E2008"
+                                           BackgroundColor="Transparent"
+                                           FontSize="14"
+                                           HeightRequest="50"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- Campo Contraseña -->
+                            <Label Text="Contraseña"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#6F4E37"
+                                   Margin="4,0,0,6"/>
+                            <Border StrokeThickness="1.5"
+                                    Stroke="#EDD9C8"
+                                    BackgroundColor="#FDF8F4"
+                                    Margin="0,0,0,34">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="12"/>
+                                </Border.StrokeShape>
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10"
+                                      Padding="14,0">
+                                    <Label Grid.Column="0"
+                                           Text="🔑"
+                                           FontSize="16"
+                                           TextColor="#B07850"
+                                           VerticalOptions="Center"/>
+                                    <Entry x:Name="txtPass"
+                                           Grid.Column="1"
+                                           Placeholder="Tu contraseña"
+                                           PlaceholderColor="#D4B59E"
+                                           TextColor="#3E2008"
+                                           IsPassword="True"
+                                           BackgroundColor="Transparent"
+                                           FontSize="14"
+                                           HeightRequest="50"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- Botón -->
+                            <Border StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="14"/>
+                                </Border.StrokeShape>
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#6F4E37" Offset="0.0"/>
+                                        <GradientStop Color="#9C6644" Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Button Text="Ingresar"
+                                        BackgroundColor="Transparent"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        HeightRequest="54"
+                                        Clicked="OnLoginClicked"/>
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+
+
+                <!-- ═══════════════════════════════════════════ -->
+                <!--  VISTA B — HUELLA                           -->
+                <!-- ═══════════════════════════════════════════ -->
+                <VerticalStackLayout x:Name="layoutHuella"
+                     IsVisible="False"
+                     Spacing="0">
+
+                    <!-- Bloque superior — idéntico al de credenciales -->
+                    <Grid HeightRequest="280"
+          BackgroundColor="#6F4E37">
+
+                        <Ellipse Fill="#7D5A44"
+                 WidthRequest="300" HeightRequest="300"
+                 HorizontalOptions="End" VerticalOptions="End"
+                 Margin="0,0,-80,0" Opacity="0.5"/>
+                        <Ellipse Fill="#5C3D28"
+                 WidthRequest="160" HeightRequest="160"
+                 HorizontalOptions="Start" VerticalOptions="Start"
+                 Margin="-50,-50,0,0" Opacity="0.4"/>
+
+                        <VerticalStackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Spacing="8">
+                            <Border StrokeThickness="0"
+                    BackgroundColor="Transparent"
+                    WidthRequest="100" HeightRequest="100"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,12">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="cat.png"
+                               HeightRequest="120"
+                               WidthRequest="120"
+                               Aspect="AspectFit"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>       
+                            </Border>
+                            <Label Text="Catalanes"
+                   FontSize="32" FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+                            <Label Text="Acceso residencial exclusivo"
+                   FontSize="13" TextColor="#D4B59E"
+                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Tarjeta blanca flotante -->
+                    <Frame BackgroundColor="#FFFFFF"
+           CornerRadius="32"
+           HasShadow="True"
+           BorderColor="Transparent"
+           Padding="30,34"
+           Margin="24,-36,24,24">
+
+                        <VerticalStackLayout Spacing="0">
+
+                            <!-- Saludo -->
+                            <Label Text="¡Bienvenido de vuelta!"
+                   FontSize="22" FontAttributes="Bold"
+                   TextColor="#3E2008"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,4"/>
+                            <Label x:Name="lblNombreUsuario"
+                   Text=""
+                   FontSize="16" FontAttributes="Bold"
+                   TextColor="#9C6644"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,32"/>
+
+                            <!-- Botón principal huella -->
+                            <Border StrokeThickness="0"
+                    Margin="0,0,0,16">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="14"/>
+                                </Border.StrokeShape>
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#6F4E37" Offset="0.0"/>
+                                        <GradientStop Color="#9C6644" Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Button x:Name="btnHuella"
+                        Text="🫆  Autenticar con huella"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        HeightRequest="58"
+                        Clicked="OnHuellaClicked"/>
+                            </Border>
+
+                            <!-- Texto ayuda -->
+                            <Label Text="Tu huella será solicitada al presionar el botón"
+                   FontSize="12"
+                   TextColor="#C4A882"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,32"/>
+
+                            <!-- Divisor -->
+                            <Grid ColumnDefinitions="*,Auto,*"
+                  ColumnSpacing="12"
+                  Margin="0,0,0,20">
+                                <BoxView Grid.Column="0"
+                         HeightRequest="1" Color="#EDD9C8"
+                         VerticalOptions="Center"/>
+                                <Label Grid.Column="1"
+                       Text="o" TextColor="#C4A882"
+                       FontSize="13" VerticalOptions="Center"/>
+                                <BoxView Grid.Column="2"
+                         HeightRequest="1" Color="#EDD9C8"
+                         VerticalOptions="Center"/>
+                            </Grid>
+
+                            <!-- Link volver a credenciales -->
+                            <Label Text="Usar usuario y contraseña"
+                   TextColor="#6F4E37"
+                   FontSize="14" FontAttributes="Bold"
+                   TextDecorations="Underline"
+                   HorizontalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnUsarCredencialesClicked"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Pie discreto -->
+        <Label Grid.Row="1"
+               Text="Catalanes © Residencial Privado"
+               TextColor="#C4A882"
+               FontSize="11"
+               HorizontalOptions="Center"
+               Padding="0,10,0,16"/>
+
+    </Grid>
+</ContentPage>

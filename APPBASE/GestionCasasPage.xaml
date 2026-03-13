@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPBASE.GestionCasasPage"
+             Title="Control de Mantenimiento"
+             BackgroundColor="#F5F5DC"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Estado de Pagos por Casa" 
+               FontSize="22" 
+               FontAttributes="Bold" 
+               TextColor="#5D4037" 
+               HorizontalOptions="Center" 
+               Margin="0,10,0,5"/>
+
+        <BoxView HeightRequest="2" Color="#C19A6B" Margin="40,0,40,10" Opacity="0.5"/>
+        <SearchBar x:Name="searCasas"
+            Placeholder="Buscar Casa..."
+            TextChanged="OnBuscarCasa"
+            BackgroundColor="White"
+            TextColor="#5D4037"/>
+
+        <CollectionView x:Name="lstCasas">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,6" 
+                           Padding="15" 
+                           CornerRadius="15" 
+                           HasShadow="True" 
+                           BorderColor="#C19A6B" 
+                           BackgroundColor="#8D6E63">
+
+                        <Grid ColumnDefinitions="*, Auto">
+                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center" Spacing="2">
+                                <Label Text="{Binding NumeroCasa, StringFormat='Casa {0}'}" 
+                                       FontSize="19" 
+                                       FontAttributes="Bold" 
+                                       TextColor="Black" />
+
+                                <Label Text="{Binding MantenimientoAlDia, Converter={StaticResource PagadoConverter}}" 
+                                       FontSize="13" 
+                                       TextColor="White" />
+                            </VerticalStackLayout>
+
+                            <Switch Grid.Column="1" 
+                                    IsToggled="{Binding MantenimientoAlDia}" 
+                                    Toggled="OnMantenimientoToggled" 
+                                    OnColor="#C19A6B" 
+                                    ThumbColor="#5D4037" 
+                                    VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

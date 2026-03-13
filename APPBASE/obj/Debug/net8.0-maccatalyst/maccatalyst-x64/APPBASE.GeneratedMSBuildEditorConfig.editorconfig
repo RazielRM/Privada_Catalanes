@@ -1,0 +1,85 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = APPBASE
+build_property.ProjectDir = C:\Users\Admin\source\repos\APPBASE\APPBASE\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/CamarasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.CamarasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = CamarasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = CamarasPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/GestionCasasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.GestionCasasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = GestionCasasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = GestionCasasPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/HistorialPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.HistorialPage.xaml
+build_metadata.AdditionalFiles.TargetPath = HistorialPage.xaml
+build_metadata.AdditionalFiles.RelativePath = HistorialPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/ListaUsuariosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.ListaUsuariosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ListaUsuariosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ListaUsuariosPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/RegistroPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.RegistroPage.xaml
+build_metadata.AdditionalFiles.TargetPath = RegistroPage.xaml
+build_metadata.AdditionalFiles.RelativePath = RegistroPage.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/Admin/source/repos/APPBASE/APPBASE/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = APPBASE.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
